@@ -2,7 +2,7 @@ function WeatherCard({ weather }) {
   const iconUrl = `https://openweathermap.org/img/wn/${weather.weather[0].icon}@2x.png`;
 
   return (
-    <div className="bg-white bg-opacity-20 p-4 rounded text-white text-center space-y-2">
+    <div className="bg-white bg-opacity-20 p-4 rounded text-black text-center space-y-2">
       <h2 className="text-2xl font-semibold">{weather.name}</h2>
       <img src={iconUrl} alt={weather.weather[0].description} className="mx-auto" />
       <p className="capitalize">{weather.weather[0].description}</p>
