@@ -23,7 +23,7 @@ function SearchBar({ city, setCity, fetchWeather, fetchWeatherByLocation }) {
       <button
         type="button"
         onClick={fetchWeatherByLocation}
-        className="bg-green-600 text-white px-4 py-2 rounded hover:bg-green-700"
+        className="bg-green-600  text-white px-4 py-2 rounded hover:bg-green-700"
       >
         Nuvarande plats
       </button>
