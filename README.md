@@ -1,12 +1,25 @@
-# React + Vite
+# Weatherly ☀️🌧️
 
-This template provides a minimal setup to get React working in Vite with HMR and some ESLint rules.
+Weatherly är en dynamisk väderapplikation byggd med React, Tailwind CSS och OpenWeatherMap API. Användaren kan söka efter väder i en stad eller hämta aktuellt väder baserat på sin plats. Appen visar väderdata, temperatur, luftfuktighet, vindhastighet, väderikoner – samt smarta tips beroende på väder och temperatur.
 
-Currently, two official plugins are available:
+---
 
-- [@vitejs/plugin-react](https://github.com/vitejs/vite-plugin-react/blob/main/packages/plugin-react) uses [Babel](https://babeljs.io/) for Fast Refresh
-- [@vitejs/plugin-react-swc](https://github.com/vitejs/vite-plugin-react/blob/main/packages/plugin-react-swc) uses [SWC](https://swc.rs/) for Fast Refresh
+## 🚀 Funktioner
 
-## Expanding the ESLint configuration
+- 🔍 Sök väder i valfri stad
+- 📍 Få väder för din nuvarande plats 
+- 🌤 Emoji i rubriken beroende på väder
+- 🧠 Tips om kläder baserat på väder 
+- 🌡 Temperaturtips 
+- 💾 Sparar senaste stad med `localStorage`
+- 📱 Responsiv design (Tailwind CSS)
+- 🌓 Mörkt tema redo att implementeras (valfritt tillägg)
 
-If you are developing a production application, we recommend using TypeScript with type-aware lint rules enabled. Check out the [TS template](https://github.com/vitejs/vite/tree/main/packages/create-vite/template-react-ts) for information on how to integrate TypeScript and [`typescript-eslint`](https://typescript-eslint.io) in your project.
+---
+
+## 🛠 Teknik
+
+- [React](https://reactjs.org/)
+- [Tailwind CSS](https://tailwindcss.com/)
+- [OpenWeatherMap API](https://openweathermap.org/api)
+- Vite (byggverktyg)
