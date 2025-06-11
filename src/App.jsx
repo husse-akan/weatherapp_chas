@@ -2,9 +2,27 @@ import { useState, useEffect } from "react";
 import WeatherCard from "./components/weatherCard";
 import SearchBar from "./components/searchBar";
 
+
 function App() {
   const [city, setCity] = useState("");
   const [weather, setWeather] = useState(null);
+
+  const getEmoji = () => {
+  if (!weather) return "🌍";
+  const condition = weather.weather[0].main.toLowerCase();
+
+  if (condition.includes("rain")) return "🌧️";
+  if (condition.includes("cloud")) return "☁️";
+  if (condition.includes("clear")) return "☀️";
+  if (condition.includes("snow")) return "❄️";
+  if (condition.includes("thunderstorm")) return "⛈️";
+  if (condition.includes("drizzle")) return "🌦️";
+  if (condition.includes("fog") || condition.includes("mist")) return "🌫️";
+  if (condition.includes("wind")) return "💨";
+
+  return "🌡️";
+};
+
 
   const API_KEY = import.meta.env.VITE_WEATHER_API_KEY;
   
@@ -64,27 +82,34 @@ function App() {
   }, []);
 
   return (
-    <div className="bg-white bg-opacity-10 p-6 rounded-lg shadow-lg w-full max-w-md">
-      <h1>Weatherly ☀️</h1>
+  <div className="min-h-screen flex items-center justify-center bg-gradient-to-b from-sky-400 to-blue-700 text-white p-4">
+    <div className="bg-white/10 backdrop-blur-md p-6 rounded-xl shadow-2xl w-full max-w-md text-white">
+      <h1 className="text-4xl font-bold mb-6 text-center drop-shadow-md">
+  {getEmoji()} Weatherly
+</h1>
+
       <SearchBar
         city={city}
         setCity={setCity}
         fetchWeather={fetchWeather}
         fetchWeatherByLocation={fetchWeatherByLocation}
       />
+
       {weather && (
         <>
           <WeatherCard weather={weather} />
           <button
             onClick={clearSavedCity}
-            className="mt-4 bg-red-600 hover:bg-red-700 text-white px-4 py-2 rounded w-full transition-all"
+            className="mt-4 bg-red-600 hover:cursor-pointer hover:bg-red-700 text-white px-4 py-2 rounded w-full transition-all"
           >
             Rensa senaste sökning
           </button>
         </>
       )}
     </div>
-  );
+  </div>
+);
+
 }
 
 export default App;

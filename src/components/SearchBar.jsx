@@ -15,7 +15,7 @@ function SearchBar({ city, setCity, fetchWeather, fetchWeatherByLocation }) {
       />
       <button
         type="submit"
-        className="bg-blue-600 text-white px-4 py-2 rounded hover:bg-blue-700"
+        className="bg-blue-600 hover:cursor-pointer text-white px-4 py-2 rounded hover:bg-blue-700"
         disabled={!city.trim()}
       >
         Sök
